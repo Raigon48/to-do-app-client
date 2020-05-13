@@ -2,19 +2,20 @@ import React from 'react';
 import {Route, Switch } from 'react-router-dom';
 
 import NavBar from './component/Navigation/NavBar';
-import Login from './component/Login';
-import SignUp from './component/SignUp';
+import LoginPage from './component/Authentication/Login';
+import SignUpPage from './component/Authentication/SignUp';
 
+import './App.css';
 
 function App() {
   return (
-    <div>
+    <React.Fragment>
       <NavBar/>
-      <Switch>
-        <Route exact path="/login" ><Login/></Route>
-        <Route exact path='/signUp'><SignUp/></Route>
-      </Switch>
-    </div>
+        <Switch>
+          <Route exact path='/login'><LoginPage/></Route>
+          <Route exact path='/signup'><SignUpPage/></Route>
+        </Switch>
+    </React.Fragment>
      
     
   );

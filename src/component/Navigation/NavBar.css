@@ -1,5 +1,6 @@
 .nav-bar {
-    background-color: green;
+    position: fixed;
+    background-color: black;
     height : 50px;
     width : 100vw;
     box-sizing: border-box;
@@ -30,6 +31,7 @@
 }
 
 .link:hover {
-    background-color: yellowgreen;
+    background-color: whitesmoke;
+    color : black;
 }
 
