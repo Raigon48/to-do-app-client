@@ -2,6 +2,8 @@ import React , {Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 
+import './SignUp.css';
+
 class SignUp extends Component {
     constructor(props) {
         super(props);
@@ -48,25 +50,35 @@ class SignUp extends Component {
 
     render() {
         return (
-            <div>
+            <div className='signup-page'>
                 <div className='signup-container'>
+                    <h1>Sign Up</h1>
                     <form className='signup-form'>
-                        <input 
-                            className='signup-input'
-                            type='text'
-                            id='firstName'
-                            name='firstName'
-                            onChange={this.handleChange}
-                            placeholder='John'
-                        />
-                        <input
-                            className='signup-input'
-                            type='text'
-                            id='lastName'
-                            name='lastName'
-                            onChange={this.handleChange}
-                            placeholder='Doe'
-                        />
+                        <div>
+                            <div>
+                                <label for='firstName'>First Name: </label>
+                                <input 
+                                    className='signup-input'
+                                    type='text'
+                                    id='firstName'
+                                    name='firstName'
+                                    onChange={this.handleChange}
+                                    placeholder='John'
+                                />
+                            </div>
+                            <div>
+                                <label for='Last Name'>Last Name:</label>
+                                <input
+                                    className='signup-input'
+                                    type='text'
+                                    id='lastName'
+                                    name='lastName'
+                                    onChange={this.handleChange}
+                                    placeholder='Doe'
+                                />
+                            </div>  
+                        </div>
+                        <label for='email'>e-mail:</label>
                         <input 
                             className='signup-input'
                             type="text"
@@ -75,38 +87,55 @@ class SignUp extends Component {
                             onChange={this.handleChange}
                             placeholder='john.doe@email.com'
                         />
-                        <input
-                            className='signup-input'
-                            type='text'
-                            id='phoneNumber'
-                            name='phoneNumber'
-                            onChange={this.handleChange}
-                            placeholder='180-980-2355'
-                        />
-                        <input
-                            className='signup-input'
-                            type='text'
-                            id='country'
-                            name='country'
-                            onChange={this.handleChange}
-                            placeholder='India'
-                        />
-                        <input 
-                            className='signup-input' 
-                            type='password' 
-                            id='password' 
-                            name='password' 
-                            onChange={this.handleChange} 
-                            placeholder='Enter password'
-                        />
-                        <input
-                            className='signup-input'
-                            type='text'
-                            id='confirmPassword'
-                            name='confirmPassword'
-                            onChange={this.handleChange}
-                            placeholder='Password again'
-                        />
+                        <div>
+                            <div>
+                                <label for='phoneNumber'>Phone Number:</label>
+                                <input
+                                    className='signup-input'
+                                    type='text'
+                                    id='phoneNumber'
+                                    name='phoneNumber'
+                                    onChange={this.handleChange}
+                                    placeholder='180-980-2355'
+                                />
+                            </div>
+                            <div>
+                                <label for='country'>Country:</label>
+                                <input
+                                    className='signup-input'
+                                    type='text'
+                                    id='country'
+                                    name='country'
+                                    onChange={this.handleChange}
+                                    placeholder='India'
+                                />
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <label for='password'>Password:</label>
+                                <input 
+                                    className='signup-input' 
+                                    type='password' 
+                                    id='password' 
+                                    name='password' 
+                                    onChange={this.handleChange} 
+                                    placeholder='Enter password'
+                                />
+                            </div>
+                            <div>
+                                <label for='confirmPassword'>Confirm Password:</label>
+                                <input
+                                    className='signup-input'
+                                    type='text'
+                                    id='confirmPassword'
+                                    name='confirmPassword'
+                                    onChange={this.handleChange}
+                                    placeholder='Password again'
+                                />
+                            </div>
+                        </div>
+                        <label for='username'>Username:</label>
                         <input
                             className='signup-input'
                             type='text'
@@ -117,7 +146,7 @@ class SignUp extends Component {
                         />
                         <button className='signup-button' type='submit' onClick={this.handleSubmit}>Signup</button>
                     </form>
-                    <Link to='/login'>Already have account? Login</Link>
+                    <p>Already Have Account? <Link to='/login'>Login</Link> </p>
                 </div>
             </div>
         )

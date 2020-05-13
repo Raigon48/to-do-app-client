@@ -1,7 +1,10 @@
 .login-page {
     display: flex;
+    position: fixed;
+    top : 50px;
+    left : 0px;
     flex-flow : row;
-    height : 100vh;
+    height : 100%;
     align-items : center;
 
 }
@@ -24,6 +27,9 @@
     justify-content: center;
     height: 100%;
     width : 50vw;
+}
+.login-container h1 {
+    margin-top : 0;
 }
 
 .login-form {
