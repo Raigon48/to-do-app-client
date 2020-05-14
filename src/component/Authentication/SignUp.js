@@ -1,8 +1,9 @@
 import React , {Component} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 import axios from 'axios';
 
 import './SignUp.css';
+import Loader from '../../util/Loading/Loading';
 
 class SignUp extends Component {
     constructor(props) {
@@ -52,14 +53,17 @@ class SignUp extends Component {
     }
 
     render() {
+        if(localStorage.authToken) {
+            return <Redirect to='/todos' />
+        }
         return (
             <div className='signup-page'>
                 <div className='signup-container'>
-                    <h1>Sign Up</h1>
+                    <div>{this.state.loading ? <Loader/>: <h1>Sign Up</h1> }</div>
                     <form className='signup-form'>
                         <div>
                             <div>
-                                <label for='firstName'>First Name: </label>
+                                <label htmlFor='firstName'>First Name: </label>
                                 <input 
                                     className='signup-input'
                                     type='text'
@@ -70,7 +74,7 @@ class SignUp extends Component {
                                 />
                             </div>
                             <div>
-                                <label for='Last Name'>Last Name:</label>
+                                <label htmlFor='Last Name'>Last Name:</label>
                                 <input
                                     className='signup-input'
                                     type='text'
@@ -81,7 +85,7 @@ class SignUp extends Component {
                                 />
                             </div>  
                         </div>
-                        <label for='email'>e-mail:</label>
+                        <label htmlFor='email'>e-mail:</label>
                         <input 
                             className='signup-input'
                             type="text"
@@ -92,7 +96,7 @@ class SignUp extends Component {
                         />
                         <div>
                             <div>
-                                <label for='phoneNumber'>Phone Number:</label>
+                                <label htmlFor='phoneNumber'>Phone Number:</label>
                                 <input
                                     className='signup-input'
                                     type='text'
@@ -103,7 +107,7 @@ class SignUp extends Component {
                                 />
                             </div>
                             <div>
-                                <label for='country'>Country:</label>
+                                <label htmlFor='country'>Country:</label>
                                 <input
                                     className='signup-input'
                                     type='text'
@@ -116,7 +120,7 @@ class SignUp extends Component {
                         </div>
                         <div>
                             <div>
-                                <label for='password'>Password:</label>
+                                <label htmlFor='password'>Password:</label>
                                 <input 
                                     className='signup-input' 
                                     type='password' 
@@ -127,7 +131,7 @@ class SignUp extends Component {
                                 />
                             </div>
                             <div>
-                                <label for='confirmPassword'>Confirm Password:</label>
+                                <label htmlFor='confirmPassword'>Confirm Password:</label>
                                 <input
                                     className='signup-input'
                                     type='text'
@@ -138,7 +142,7 @@ class SignUp extends Component {
                                 />
                             </div>
                         </div>
-                        <label for='username'>Username:</label>
+                        <label htmlFor='username'>Username:</label>
                         <input
                             className='signup-input'
                             type='text'

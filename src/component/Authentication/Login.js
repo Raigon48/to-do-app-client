@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link, Redirect } from 'react-router-dom';
 
 import './Login.css';
+import Loader from '../../util/Loading/Loading';
 class Login extends Component {
 	constructor(props) {
 		super(props);
@@ -54,7 +55,7 @@ class Login extends Component {
 					<p>I'm controlling, and I want everything orderly, and I need lists. My mind goes a mile a minute. I'm difficult on every single level.</p>
 				</div>
 				<div className='login-container'>
-					<h1>Login</h1>
+					<div>{ this.state.loading ? <Loader/> : <h1>Login</h1> }</div>
 					<form className='login-form'>
 						<label for='email'>Enter e-mail:</label>
 						<input 
@@ -83,7 +84,7 @@ class Login extends Component {
 						</button>
 					</form>
 					<p>New User? <Link to='/signUp'> Sign Up</Link></p>
-					<div>{ this.state.loading ? 'Loading...' : '' }</div>
+					
 				</div>
 			</div>
 			

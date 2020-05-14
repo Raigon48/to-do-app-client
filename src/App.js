@@ -5,6 +5,7 @@ import NavBar from './component/Navigation/NavBar';
 import LoginPage from './component/Authentication/Login';
 import SignUpPage from './component/Authentication/SignUp';
 
+
 import './App.css';
 
 function App() {
