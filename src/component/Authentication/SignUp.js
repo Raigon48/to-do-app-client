@@ -28,6 +28,7 @@ class SignUp extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
+        this.setState({loading : true});
         const userData = {
             firstName : this.state.firstName,
             lastName : this.state.lastName,
@@ -41,10 +42,12 @@ class SignUp extends Component {
         axios
             .post('https://us-central1-wdatodoapplication.cloudfunctions.net/api/signup', userData)
             .then(response => {
-                console.log(response);
+                localStorage.setItem('authToken', 'Bearer ' + response.data.token);
+                this.setState({loading : false})
             })
             .catch(error => {
                 console.log(error);
+                this.setState({loading : false})
             })
     }
 

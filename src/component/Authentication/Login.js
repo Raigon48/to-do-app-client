@@ -37,6 +37,7 @@ class Login extends Component {
 			})
 			.catch(error => {
 				console.log(error);
+				this.setState({loading : false});
 			})
 			if(true) {
 				return <Redirect to='/signup'/>
