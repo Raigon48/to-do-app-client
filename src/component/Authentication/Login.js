@@ -35,6 +35,7 @@ class Login extends Component {
 				console.log(response);
 				localStorage.setItem('authToken', 'Bearer ' + response.data.token);
 				this.setState({loading : false});
+				window.location.reload(true);
 			})
 			.catch(error => {
 				console.log(error);
@@ -47,7 +48,7 @@ class Login extends Component {
 
 	render() { 
 		if(localStorage.authToken){
-			return <Redirect to='/todos' />
+			return <Redirect to='/account' />
 		}
 		return (
 			<div className='login-page'>
@@ -57,7 +58,7 @@ class Login extends Component {
 				<div className='login-container'>
 					<div>{ this.state.loading ? <Loader/> : <h1>Login</h1> }</div>
 					<form className='login-form'>
-						<label for='email'>Enter e-mail:</label>
+						<label>Enter e-mail:</label>
 						<input 
 							className='login-input'
 							type="text" 
@@ -66,7 +67,7 @@ class Login extends Component {
 							onChange={this.handleChange} 
 							placeholder='Enter email'
 						/>
-						<label for='password'>Enter Password:</label>
+						<label>Enter Password:</label>
 						<input 
 							className='login-input' 
 							type='password' 

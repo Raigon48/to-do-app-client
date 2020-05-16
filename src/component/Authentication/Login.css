@@ -1,8 +1,8 @@
 .login-page {
     display: flex;
     position: fixed;
-    top : 50px;
-    left : 0px;
+    top : 0;
+    left : 0;
     flex-flow : row;
     height : 100%;
     align-items : center;

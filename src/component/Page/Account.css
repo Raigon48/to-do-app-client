@@ -1,0 +1,38 @@
+#account-container{
+    position :fixed;
+    top: 50px;
+    left : 0;
+    display : flex;
+    flex-direction: row;
+    align-content: center;
+}
+
+#account-left {
+    margin-top : 20px;
+    width : 250px;
+    display : flex;
+    flex-direction : column;
+    align-items: center;
+}
+
+
+#profile-pic {
+    height : 200px;
+    width : 200px;
+    border : 1px solid black;
+}
+
+#account-profile-picture {
+    height : 100%;
+    width : 100%;
+    border-radius : 20px;
+}
+
+#account-right {
+    padding : 10px;
+    padding-left : 50px;
+}
+
+#account-right>.row-2 {
+    display : flex;
+}

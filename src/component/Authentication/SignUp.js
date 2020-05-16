@@ -44,7 +44,8 @@ class SignUp extends Component {
             .post('https://us-central1-wdatodoapplication.cloudfunctions.net/api/signup', userData)
             .then(response => {
                 localStorage.setItem('authToken', 'Bearer ' + response.data.token);
-                this.setState({loading : false})
+                this.setState({loading : false});
+                window.location.reload(true);
             })
             .catch(error => {
                 console.log(error);
@@ -63,7 +64,7 @@ class SignUp extends Component {
                     <form className='signup-form'>
                         <div>
                             <div>
-                                <label htmlFor='firstName'>First Name: </label>
+                                <label>First Name: </label>
                                 <input 
                                     className='signup-input'
                                     type='text'
@@ -74,7 +75,7 @@ class SignUp extends Component {
                                 />
                             </div>
                             <div>
-                                <label htmlFor='Last Name'>Last Name:</label>
+                                <label>Last Name:</label>
                                 <input
                                     className='signup-input'
                                     type='text'
@@ -85,7 +86,7 @@ class SignUp extends Component {
                                 />
                             </div>  
                         </div>
-                        <label htmlFor='email'>e-mail:</label>
+                        <label >e-mail:</label>
                         <input 
                             className='signup-input'
                             type="text"
@@ -96,7 +97,7 @@ class SignUp extends Component {
                         />
                         <div>
                             <div>
-                                <label htmlFor='phoneNumber'>Phone Number:</label>
+                                <label >Phone Number:</label>
                                 <input
                                     className='signup-input'
                                     type='text'
@@ -107,7 +108,7 @@ class SignUp extends Component {
                                 />
                             </div>
                             <div>
-                                <label htmlFor='country'>Country:</label>
+                                <label>Country:</label>
                                 <input
                                     className='signup-input'
                                     type='text'
@@ -120,7 +121,7 @@ class SignUp extends Component {
                         </div>
                         <div>
                             <div>
-                                <label htmlFor='password'>Password:</label>
+                                <label >Password:</label>
                                 <input 
                                     className='signup-input' 
                                     type='password' 
@@ -131,7 +132,7 @@ class SignUp extends Component {
                                 />
                             </div>
                             <div>
-                                <label htmlFor='confirmPassword'>Confirm Password:</label>
+                                <label>Confirm Password:</label>
                                 <input
                                     className='signup-input'
                                     type='text'
@@ -142,7 +143,7 @@ class SignUp extends Component {
                                 />
                             </div>
                         </div>
-                        <label htmlFor='username'>Username:</label>
+                        <label>Username:</label>
                         <input
                             className='signup-input'
                             type='text'
