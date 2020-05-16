@@ -10,6 +10,7 @@ import NavBar from './component/Navigation/NavBar';
 import Home from './component/Page/Home';
 import Todos from './component/Page/Todos';
 import Account from './component/Page/Account';
+import Todo from './component/Page/AddToDo';
 
 function App() {
   return (
@@ -17,10 +18,11 @@ function App() {
         <NavBar/>
         <Switch>
           <Route exact path='/home'><Home/></Route>
-          <Route exact path='/todo'><Todos/></Route>
+          <Route exact path='/todos'><Todos/></Route>
           <Route exact path='/account'><Account/></Route>
           <Route exact path='/login'><LoginPage/></Route>
           <Route exact path='/signup'><SignUpPage/></Route>
+          <Route exact path='/todos/create'><Todo/></Route>
         </Switch>
     </React.Fragment>
      
